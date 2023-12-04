@@ -1,0 +1,39 @@
+.info-with-image {
+  display: flex;
+  align-items: unset;
+  flex-direction: column;
+  margin: auto;
+  padding-bottom: 30px;
+
+  .featured-image {
+    order: 2;
+    margin: 0;
+    padding-top: 20px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .text-content {
+    margin-bottom: 30px;
+    text-align: left;
+
+    h1,
+    h2 {
+      margin-top: 20px;
+    }
+
+    h3 {
+      margin-top: 20px;
+      line-height: 36px;
+      font-size: 20px;
+    }
+
+    p {
+      margin-top: 20px;
+      line-height: 30px;
+      font-size: 16px;
+    }
+  }
+}

@@ -1,0 +1,136 @@
+footer {
+  background-color: var(--warp-black);
+  color: var(--warp-blue);
+  padding: 140px 0 100px;
+
+  a {
+    color: var(--warp-blue);
+  }
+
+  #footer-content {
+    // display: flex;
+    // justify-content: space-between;
+    width: 100%;
+  }
+
+  #catch {
+    grid-column: 2 / 7;
+    position: relative;
+    padding-bottom: rem(5);
+
+    a {
+      display: block;
+      overflow: visible;
+
+      &:hover::after {
+        transform: scaleX(0.9);
+      }
+    }
+
+    p {
+      font-size: rem(70);
+      line-height: rem(60);
+
+      &:last-child {
+        margin-top: rem(8);
+      }
+    }
+  }
+
+  #addresses {
+    grid-column: -1 / 9;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #phone {
+    margin-top: rem(25);
+  }
+
+  #social {
+    margin-top: auto;
+
+    a {
+      color: var(--warp-blue);
+    }
+  }
+
+  #copyright {
+    margin-top: rem(100);
+    align-items: center;
+
+    #warp {
+      grid-column-start: 1;
+      filter: invert(51%) sepia(63%) saturate(6598%) hue-rotate(163deg) brightness(100%) contrast(101%);
+    }
+
+    #rights {
+      grid-column: 3 / -1;
+    }
+  }
+}
+
+@include respond-below(sm) {
+  footer {
+    padding-top: rem(96);
+
+    #catch {
+      grid-column: 1 / -1;
+      padding-bottom: rem(7);
+
+      p {
+        font-size: rem(53);
+        font-weight: 300;
+        line-height: 0.89;
+        letter-spacing: -1.59px;
+      }
+    }
+
+    #addresses {
+      grid-column: 1 / -1;
+      margin-top: rem(50);
+    }
+
+    #copyright {
+      margin-top: rem(80);
+      display: flex;
+      flex-direction: column;
+
+      #warp {
+        grid-column-start: 1;
+        margin-bottom: 20px;
+      }
+    }
+
+    #social {
+      li {
+        margin-bottom: rem(15);
+      }
+
+      a {
+        font-size: 21px;
+      }
+    }
+  }
+}
+
+@include respond-between(sm, md) {
+  footer {
+    #catch p {
+      font-size: rem(40);
+      line-height: rem(40);
+    }
+
+    #addresses p {
+      font-size: rem(17);
+    }
+  }
+}
+
+@include respond-between(md, xlg) {
+  footer {
+    #addresses p {
+      font-size: rem(20);
+    }
+  }
+}

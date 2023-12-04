@@ -1,0 +1,17 @@
+.image-gallery {
+  margin: rem(50) 0 rem(100);
+  img {
+    width: 100%;
+    height: rem(450);
+    object-fit: cover;
+  }
+}
+
+@include respond-below(sm) {
+  .image-gallery {
+    img {
+      height: rem(215);
+      border-radius: 17px;
+    }
+  }
+}

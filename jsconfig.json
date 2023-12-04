@@ -1,0 +1,35 @@
+{
+  // This file is required for VSCode to understand webpack aliases
+  "module": "es6",
+  "moduleResolution": "node",
+  "compilerOptions": {
+    "resolveJsonModule": true,
+    "jsx": "preserve",
+    "module": "commonjs",
+    "target": "es5",
+    "sourceMap": true,
+    "allowSyntheticDefaultImports": true,
+
+    "baseUrl": ".",
+    // Relative to "baseUrl"
+    "paths": {
+      "@/*": ["./src/*"],
+      "mocks/*": ["./tests/unit/specs/__mocks__/*"],
+      "test-e2e/*": ["./tests/e2e/specs/*"],
+      "test-unit/*": ["./tests/unit/specs/*"]
+    }
+  },
+  "exclude": [
+    ".git",
+    ".app-cache",
+    ".npm",
+    ".npm-tmp",
+    "dist",
+    "dist*",
+    "node_modules",
+    "subfolder/dist",
+    "subfolder/node_modules",
+    "**/dist/*",
+    "**/node_modules/*"
+  ]
+}

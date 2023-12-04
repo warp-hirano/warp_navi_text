@@ -1,0 +1,114 @@
+form.contact-form {
+  grid-column: 4 / 8;
+  font-family: var(--warp-main-font);
+
+  label {
+    display: none;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    background: transparent;
+    margin-bottom: rem(33);
+    color: white;
+    font-size: rem(18);
+    font-weight: 300;
+    font-family: var(--warp-main-font);
+    border-bottom: 1px var(--warp-light-blue) solid;
+    padding: rem(10) 0;
+    outline: none;
+
+    &::-webkit-input-placeholder {
+      color: white;
+    }
+  }
+
+  button[type='submit'] {
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    border-bottom: 1px white solid;
+    margin: rem(50) 0;
+    font-size: rem(36);
+    font-weight: 300;
+    font-family: var(--warp-main-font);
+  }
+}
+.thank-you {
+  grid-column: 4 / -1;
+  font-size: rem(36);
+  font-weight: 300;
+  line-height: 1.33;
+  letter-spacing: -1.08px;
+}
+
+.thank-you-close {
+  grid-column: 4 / -1;
+  margin-top: rem(90);
+
+  a {
+    color: white;
+  }
+}
+
+#contact-grid {
+  .back-button a {
+    color: white;
+    background: transparent;
+    cursor: pointer;
+    font-size: rem(16);
+    font-weight: 300;
+  }
+  .sns {
+    position: absolute;
+    bottom: rem(45);
+    right: rem(143);
+    a {
+      color: white;
+    }
+  }
+}
+
+// Specific to contact page
+.contact-page {
+  #contact {
+    display: none;
+  }
+}
+
+@include respond-below(sm) {
+  form.contact-form {
+    grid-column: 1 / -1;
+
+    button[type='submit'] {
+      margin-top: 0;
+    }
+  }
+
+  .thank-you {
+    grid-column: 1 / -1;
+  }
+
+  #contact-grid {
+    margin-top: -60px;
+    .sns {
+      position: relative;
+      bottom: 0;
+      right: 0;
+      margin-top: rem(30);
+      float: right;
+    }
+  }
+}
+
+@include respond-between(sm, lg) {
+  form.contact-form {
+    grid-column: 2 / 8;
+  }
+  #contact-grid {
+    .sns {
+      right: 0;
+    }
+  }
+}

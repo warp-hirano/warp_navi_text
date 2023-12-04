@@ -1,0 +1,152 @@
+#we-do {
+  margin: rem(50) 0;
+}
+
+#skills-set {
+  margin: rem(120) 0 rem(80);
+
+  .skill:last-child {
+    .skill-images {
+      border-bottom: 0;
+    }
+  }
+}
+
+.skill {
+  h4 {
+    font-size: rem(48);
+    grid-column-start: 4;
+  }
+
+  .skill-images {
+    grid-column: 4 / -1;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: rem(80);
+    padding-bottom: rem(80);
+    border-bottom: 1px var(--warp-black) solid;
+
+    img {
+      width: calc(50% - 15px);
+      height: auto;
+    }
+  }
+}
+.skill-details {
+  grid-column: 8 / -1;
+  margin-top: 0;
+  margin-bottom: rem(80);
+}
+
+#brands {
+  margin: rem(100) 0;
+
+  h2 {
+    text-align: center;
+    font-size: rem(48);
+    margin-bottom: rem(60);
+  }
+
+  .grid > * {
+    grid-column: span 2;
+    text-align: center;
+    margin-bottom: rem(40);
+
+    &:nth-child(5n + 1) {
+      grid-column: 2 / span 2;
+    }
+    &:nth-child(5n) {
+      grid-column-end: -2;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+html:lang(ja-jp) {
+  @include respond-above(sm) {
+    #brands h2 {
+      font-size: rem(38);
+    }
+  }
+
+  @include respond-below(sm) {
+    #brands h2 {
+      font-size: rem(38);
+    }
+  }
+}
+
+@include respond-below(sm) {
+  .skill {
+    h4 {
+      font-size: rem(42);
+      line-height: rem(60);
+      letter-spacing: -1.26px;
+      grid-column: 1 / -1;
+      margin-bottom: rem(26);
+    }
+
+    .skill-images {
+      grid-column: 1 / -1;
+      margin-bottom: rem(25);
+      padding-bottom: rem(30);
+
+      img {
+        max-height: rem(320);
+      }
+    }
+  }
+  .skill-details {
+    grid-column: 1 / -1;
+    margin-bottom: rem(25);
+    font-size: rem(18);
+  }
+
+  #brands {
+    h2 {
+      font-size: rem(60);
+      line-height: 1;
+      letter-spacing: -1.8px;
+    }
+
+    .grid > * {
+      grid-column: span 4;
+      margin-bottom: rem(20);
+      font-size: rem(19);
+      font-weight: 500;
+      line-height: 2.21;
+      letter-spacing: -0.57px;
+
+      &:nth-child(5n + 1) {
+        grid-column: span 4;
+      }
+      &:nth-child(5n) {
+        grid-column: span 4;
+      }
+    }
+  }
+}
+
+@include respond-below(xs) {
+  .skill {
+    .skill-images {
+      img {
+        max-height: rem(240);
+      }
+    }
+  }
+}
+
+@include respond-between(sm, lg) {
+  .skill {
+    h4 {
+      font-size: rem(36);
+    }
+  }
+}
+
+// Specific to Japanese pages

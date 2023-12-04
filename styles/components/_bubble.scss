@@ -1,0 +1,79 @@
+.bubble {
+  grid-column: 2 / -2;
+  margin-bottom: rem(180);
+  position: relative;
+  padding-top: 36%;
+
+  .liquid-anim {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  picture.bubble-img {
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    height: 98%;
+    border-radius: 68px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 68px;
+      object-fit: cover;
+    }
+
+    &:hover {
+      cursor: none;
+      // cursor: url('/images/cursor-showreel.png'), pointer;
+    }
+  }
+
+  .play-reel-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url('/images/Cursor-showreel.svg');
+    width: 110px;
+    height: 110px;
+    background-repeat: no-repeat;
+    z-index: 2;
+    pointer-events: none;
+  }
+}
+
+@include respond-below(sm) {
+  .bubble {
+    grid-column: 1 / -1;
+    padding-top: 100%;
+    margin-bottom: rem(60);
+
+    .liquid-anim {
+      display: none;
+    }
+
+    img {
+      border-radius: 20px;
+    }
+
+    .play-reel-button {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+@include respond-between(sm, lg) {
+  .bubble {
+    grid-column: 1 / -1;
+  }
+}

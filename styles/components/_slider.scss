@@ -1,0 +1,31 @@
+.glide__bullets {
+  position: absolute;
+  z-index: 2;
+  bottom: -53px;
+  display: flex;
+  width: 100%;
+  left: 50%;
+  list-style: none;
+  transform: translateX(-50%);
+}
+
+.glide__bullet {
+  background-color: rgba(255, 255, 255, 0.5);
+  width: auto;
+  height: 3px;
+  padding: 0;
+  flex: 1 0 auto;
+  transition: all 300ms ease-in-out;
+  cursor: pointer;
+  line-height: 0;
+}
+.glide__bullet:focus {
+  outline: none;
+}
+.glide__bullet:hover,
+.glide__bullet:focus {
+  background-color: white;
+}
+.glide__bullet--active {
+  background-color: white;
+}

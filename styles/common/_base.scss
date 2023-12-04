@@ -1,0 +1,363 @@
+*,
+html {
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: var(--warp-main-font);
+  font-size: var(--default-font-size);
+  font-weight: 300;
+  background-color: var(--warp-yellow);
+  overflow-x: hidden;
+
+  &.blue-theme {
+    background-color: var(--warp-blue);
+    color: white;
+
+    .home-menu {
+      a {
+        color: white;
+
+        span {
+          -webkit-text-stroke: 0.5px #fff;
+        }
+      }
+    }
+
+    .navigation .sns span {
+      color: var(--warp-black);
+    }
+  }
+}
+
+::selection {
+  background: #fff7c7;
+  /* WebKit/Blink Browsers */
+}
+
+::-moz-selection {
+  background: #fff7c7;
+  /* Gecko Browsers */
+}
+
+button:focus {
+  outline: 0;
+}
+
+a {
+  text-decoration: none;
+  // Framer motion sometimes adds a layer that changes the pointer
+  cursor: pointer;
+}
+
+.underlined-links {
+
+  a,
+  button {
+    overflow: hidden;
+    position: relative;
+    vertical-align: top;
+
+    &:after {
+      background: currentColor;
+      bottom: 0;
+      content: '';
+      height: 1px;
+      left: 0;
+      position: absolute;
+      -webkit-transition: -webkit-transform 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+      transition: -webkit-transform 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+      transition: transform 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+      transition: transform 0.7s cubic-bezier(0.19, 1, 0.22, 1),
+        -webkit-transform 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+      width: 100%;
+      -webkit-transform: scaleX(0);
+      transform: scaleX(0);
+      -webkit-transform-origin: right center;
+      transform-origin: right center;
+    }
+
+    &:hover:after {
+      -webkit-transform: scaleX(1);
+      transform: scaleX(1);
+      -webkit-transform-origin: left center;
+      transform-origin: left center;
+    }
+  }
+}
+
+.auto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,
+      minmax(var(--auto-grid-min-size), 1fr));
+  grid-gap: 2rem;
+  max-width: inherit;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-column-gap: rem(30);
+
+  .with-side {
+    grid-template-rows: repeat(3, 1fr);
+  }
+}
+
+.wrapper {
+  width: 100%;
+  padding: 0 rem(143);
+}
+
+main,
+header,
+footer {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.will-change {
+  will-change: transform, opacity;
+}
+
+.underlined-box {
+  font-size: rem(30);
+  line-height: rem(30);
+  border-bottom: 1px var(--warp-black) solid;
+}
+
+.introduction {
+  grid-column: 4 / -4;
+  font-size: rem(48);
+  letter-spacing: -1.44px;
+  line-height: 1.25;
+  margin: rem(20) 0 rem(60);
+
+  h1 {
+    font-size: rem(48);
+    letter-spacing: -1.44px;
+    line-height: 1.25;
+  }
+}
+
+.intro-title {
+  grid-column: 1 / span 2;
+}
+
+.intro-content {
+  grid-column: 4 / -2;
+  font-size: rem(48);
+  letter-spacing: -1px;
+  line-height: rem(60);
+}
+
+.presentation-image {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 30%;
+  grid-column: 2 / -2;
+  border-radius: 68px;
+  margin: rem(80) 0;
+
+  @include respond-below(sm) {
+    padding-bottom: 100%;
+    grid-column: 1 / -1;
+    margin: 0;
+    border-radius: 20px;
+  }
+
+  @include respond-between(sm, lg) {
+    margin: 0;
+    border-radius: 20px;
+  }
+}
+
+.card {
+  background: var(--warp-light-blue);
+  border: 1px solid var(--warp-purple-2);
+  border-radius: rem(22);
+
+  h4 {
+    word-wrap: break-word;
+  }
+}
+
+#distortion-text-component {
+  position: fixed;
+  z-index: -1;
+  opacity: 0.05;
+  transform: rotate(-15deg) translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 0;
+  left: 50%;
+
+  canvas {
+    display: block;
+    margin-top: -65px;
+  }
+}
+
+#distortion-text-component:not(:first-child) {
+  display: none;
+}
+
+.social-share {
+  margin: rem(30) 0;
+}
+
+.social-title {
+  grid-column: 4 / span 1;
+}
+
+.social-options {
+  margin-top: 0;
+  grid-column: 5 / -1;
+
+  li {
+    margin-right: rem(15);
+    display: inline-block;
+    cursor: pointer;
+  }
+}
+
+// Hides header and navigation when video is playing
+#menu-burger,
+header,
+#contact {
+  transition: opacity 0.5s ease-out;
+}
+
+.fade {
+  opacity: 0 !important;
+  pointer-events: none;
+}
+
+main {
+  padding-top: 206px;
+}
+
+@include respond-below(lg) {
+  .wrapper {
+    padding: 0 rem(83);
+  }
+}
+
+@include respond-below(md) {
+  .wrapper {
+    padding: 0 rem(33);
+  }
+}
+
+@include respond-below(sm) {
+  body {
+    font-weight: 300;
+  }
+
+  .wrapper {
+    padding: 0 rem(20);
+  }
+
+  main {
+    padding-top: rem(206);
+  }
+
+  .introduction {
+    grid-column: 1 / -1;
+    font-size: rem(39);
+    line-height: 1.26;
+    letter-spacing: -1.17px;
+    margin: rem(20) 0 rem(60);
+
+    h1 {
+      font-size: rem(39);
+      line-height: 1.26;
+      letter-spacing: -1.17px;
+    }
+  }
+
+  .intro-title,
+  .intro-content {
+    grid-column: 1 / -1;
+  }
+
+  .intro-title {
+    font-size: rem(21);
+    font-weight: 300;
+    letter-spacing: -0.63px;
+    margin-bottom: rem(30);
+
+    h2 {
+      font-size: rem(21);
+      font-weight: 300;
+      letter-spacing: -0.63px;
+    }
+  }
+
+  .intro-content {
+    font-size: rem(32);
+    font-weight: 300;
+    line-height: 1.56;
+    letter-spacing: -0.96px;
+  }
+
+  .social-options {
+    grid-column-end: -1;
+    justify-self: end;
+  }
+
+  .social-title {
+    grid-column: 1 / span 1;
+  }
+}
+
+@include respond-between(sm, xlg) {
+
+  .introduction,
+  .introduction.list-introduction {
+    grid-column: 2 / -2;
+  }
+
+  .introduction.list-introduction {
+    h1 {
+      font-size: rem(38);
+    }
+  }
+
+  .social-options {
+    grid-column: 3 / -1;
+  }
+
+  .social-title {
+    grid-column: 2 / span 1;
+  }
+}
+
+@include respond-above(xlg) {
+  .introduction.list-introduction {
+    grid-column: 4/ -1;
+  }
+}
+
+@include respond-below(xs) {
+  .introduction.list-introduction {
+    margin-bottom: rem(30);
+
+    h1 {
+      font-size: rem(24);
+    }
+  }
+}

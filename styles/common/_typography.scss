@@ -1,0 +1,307 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--warp-main-font);
+}
+
+h1 {
+  font-size: rem(40);
+  line-height: 4.75rem;
+}
+
+h2 {
+  font-size: rem(32);
+}
+
+h3 {
+  font-size: rem(36);
+  color: var(--warp-black);
+}
+
+h4 {
+  font-size: 2.625rem;
+}
+
+h5 {
+  font-size: 1.5rem;
+}
+
+h6 {
+  font-size: 1.25rem;
+}
+
+p {
+  font-size: rem(24);
+  line-height: rem(28);
+}
+
+a {
+  color: var(--warp-black);
+}
+
+.bg-text {
+  -webkit-text-stroke: 0.5px var(--warp-black);
+  color: transparent;
+}
+
+body.dark-theme {
+  color: var(--warp-yellow);
+
+  a,
+  h3 {
+    color: var(--warp-yellow);
+  }
+
+  .menu-links,
+  .sns {
+    color: var(--warp-black);
+
+    a {
+      color: var(--warp-black);
+    }
+  }
+
+  #menu-burger svg {
+    filter: brightness(0) invert(1);
+  }
+
+  .underlined-box {
+    border-bottom-color: var(--warp-yellow);
+  }
+
+  #menu-burger-wrapper i {
+    background-color: var(--warp-yellow);
+  }
+
+  header .home-menu a span {
+    -webkit-text-stroke: 0.5px var(--warp-yellow);
+  }
+
+  .bg-text {
+    -webkit-text-stroke: 0.5px var(--warp-yellow);
+  }
+
+  #pf-next-project {
+
+    h3,
+    a {
+      color: var(--warp-yellow);
+    }
+  }
+}
+
+pre {
+  white-space: pre-wrap;
+  /* css-3 */
+  white-space: -moz-pre-wrap;
+  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;
+  /* Opera 4-6 */
+  white-space: -o-pre-wrap;
+  /* Opera 7 */
+  word-wrap: break-word;
+  /* Internet Explorer 5.5+ */
+}
+
+ol,
+ul {
+  margin-top: rem(20);
+
+  li {
+    margin-bottom: rem(8);
+  }
+}
+
+ol {
+  list-style: disc;
+}
+
+ul {
+  list-style: none;
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+html:lang(ja-jp) {
+  .portfolio {
+
+    h2,
+    .underlined-box,
+    #pf-overview .overview-content,
+    #pf-overview h2,
+    p {
+      line-height: 1.8;
+    }
+  }
+
+  .intro-content,
+  .introduction h1 {
+    line-height: 1.8;
+  }
+
+  #post-content {
+
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+      line-height: 1.8;
+    }
+  }
+
+  h5 {
+    line-height: 1.8;
+  }
+
+  .menu-links li {
+    font-size: rem(65);
+
+    .submenu {
+      li {
+        font-size: rem(30);
+        letter-spacing: rem(-1);
+      }
+    }
+  }
+
+  footer #catch {
+    p {
+      font-size: rem(40);
+      line-height: rem(50);
+
+      br {
+        display: none;
+      }
+
+      &:last-child {
+        margin-top: 0;
+      }
+    }
+  }
+
+  @include respond-below(xlg) {
+    footer #catch p {
+      font-size: rem(35);
+      line-height: rem(45);
+    }
+  }
+
+  @include respond-between(sm, xlg) {
+    .menu-links {
+      li {
+        font-size: rem(45);
+      }
+
+      .submenu {
+        li {
+          font-size: rem(24);
+          letter-spacing: rem(-1);
+        }
+      }
+    }
+  }
+
+  @include respond-between(md, xxlg) {
+    footer #catch {
+      grid-column: 2 / 8;
+
+      p {
+        font-size: rem(35);
+        line-height: rem(45);
+      }
+    }
+  }
+
+  @include respond-below(md) {
+    footer #catch {
+      p {
+        font-size: rem(30);
+        line-height: rem(40);
+
+        br {
+          display: block;
+        }
+      }
+    }
+  }
+
+  @include respond-below(xs) {
+    footer #catch {
+      p {
+        font-size: rem(25);
+        line-height: rem(35);
+      }
+    }
+  }
+
+  @include respond-below(sm) {
+    .menu-links {
+      li {
+        font-size: rem(35);
+
+        .submenu {
+          li {
+            font-size: rem(18);
+            letter-spacing: rem(-1);
+          }
+        }
+      }
+
+
+    }
+  }
+
+  @include respond-above(sm) {
+
+    .intro-content,
+    .introduction {
+      font-size: rem(38);
+    }
+  }
+}
+
+@include respond-below(sm) {
+  h1 {
+    font-size: rem(39);
+    font-weight: 300;
+    line-height: 1.26;
+    letter-spacing: -1.17px;
+  }
+
+  h2 {
+    font-size: rem(32);
+  }
+
+  h3 {
+    font-size: rem(24);
+    letter-spacing: -0.72px;
+  }
+
+  h4 {
+    font-size: 2.625rem;
+  }
+
+  h5 {
+    font-size: 1.5rem;
+  }
+
+  h6 {
+    font-size: 1.25rem;
+  }
+
+  p {
+    font-size: rem(24);
+    line-height: rem(28);
+  }
+}

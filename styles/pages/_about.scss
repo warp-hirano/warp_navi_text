@@ -1,0 +1,128 @@
+#about-culture {
+  margin: rem(100) 0 rem(120);
+}
+
+#team-title h2 {
+  font-size: rem(100);
+  letter-spacing: -3px;
+  line-height: rem(90);
+  text-align: center;
+  margin-bottom: rem(70);
+}
+
+#office h2 {
+  font-size: 2rem !important;
+  position: absolute;
+}
+
+.member {
+  grid-column: span 3;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: rem(50);
+
+  &:nth-child(3n + 1) {
+    grid-column: 4 / span 3;
+  }
+
+  h4 {
+    margin-top: rem(17);
+    margin-bottom: rem(7);
+    font-size: rem(21);
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: -0.63px;
+  }
+
+  .position {
+    margin-bottom: rem(17);
+  }
+
+  .position,
+  .member-desc {
+    font-size: rem(12);
+    line-height: 1.58;
+    letter-spacing: -0.36px;
+    font-weight: 300;
+    letter-spacing: -0.42px;
+  }
+
+  .card {
+    transition: all 0.4s ease-out;
+    padding-bottom: 75%;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 1;
+    transition: opacity 0.2s ease-out;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+}
+
+#office {
+  margin: rem(80) 0;
+
+  h2 {
+    font-size: rem(21);
+    grid-column-start: 4;
+  }
+}
+
+@include respond-below(sm) {
+  #about-culture {
+    margin: rem(30) 0 rem(100);
+  }
+
+  #our-team {
+    margin-top: rem(150);
+
+    #team-title h2 {
+      font-size: rem(42);
+      line-height: 0.9;
+      letter-spacing: -1.26px;
+      text-align: left;
+    }
+  }
+
+  .member {
+    grid-column: span 6;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: rem(21);
+
+    &:nth-child(3n + 1) {
+      grid-column: span 6;
+    }
+
+    h4 {
+      margin-top: rem(13);
+      margin-bottom: rem(7);
+      font-size: rem(21);
+      line-height: 1.43;
+      letter-spacing: -0.63px;
+    }
+
+    .position {
+      font-size: rem(12);
+      letter-spacing: -0.36px;
+    }
+  }
+}
+
+@include respond-between(sm, lg) {
+  .member {
+    grid-column: span 4;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: rem(21);
+
+    &:nth-child(3n + 1) {
+      grid-column: span 4;
+    }
+  }
+}

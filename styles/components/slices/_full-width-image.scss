@@ -1,0 +1,24 @@
+.full-width-image {
+  position: relative;
+  margin-top: 0;
+  padding-top: 0;
+
+  .main-img {
+    z-index: 1;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .background {
+    display: none;
+    position: absolute;
+    top: 0;
+
+    img {
+      width: 790px;
+      height: 608px;
+    }
+  }
+}

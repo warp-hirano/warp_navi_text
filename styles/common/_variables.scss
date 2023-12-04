@@ -1,0 +1,41 @@
+// Used by Sass anc css variables
+$browser-context: 16;
+:root {
+  /* Colors */
+  --warp-yellow: #faf6f0;
+  --warp-grey: e5e1de;
+  --warp-black: #272727;
+  --warp-black-2: #1a1f21;
+  --warp-black-lighten: #a5a5a5;
+  --warp-purple: #543c5c;
+  --warp-purple-2: #4a3755;
+  --warp-blue: #009cb1;
+  --warp-light-blue: #a6deeb;
+  --warp-green: #6ba895;
+  --warp-header-mg-top: 40px;
+  --warp-header-mg-bt: 120px;
+  --warp-header-height: 46px;
+
+  /* Fonts */
+  --warp-main-font: roc-grotesk, sans-serif;
+
+  /* Break points */
+  --min-width-md: 768px;
+  --min-width-l: 1100px;
+  --min-width-xl: 1300px;
+
+  /* Typography */
+  --browser-context: #{$browser-context};
+
+  --default-font-size: var(--browser-context) px;
+}
+
+// A map of breakpoints.
+$breakpoints: (
+  xs: 576px,
+  sm: 768px,
+  md: 992px,
+  lg: 1080px,
+  xlg: 1300px,
+  xxlg: 1600px,
+);
